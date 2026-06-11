@@ -61,7 +61,7 @@ export default function Skills() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)] mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-[#B4B7AC] mb-3"
       >
         What I work with
       </motion.p>
@@ -69,7 +69,7 @@ export default function Skills() {
         initial={{ opacity: 0, y: 14 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.45, delay: 0.05 }}
-        className="text-3xl font-extrabold text-[var(--foreground)] mb-10"
+        className="text-3xl font-extrabold text-slate-900 mb-10"
       >
         Skills &amp; Technologies
       </motion.h2>
@@ -84,9 +84,9 @@ export default function Skills() {
             whileHover={{ y: -3 }}
             className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-8 flex flex-col items-center text-center gap-4"
           >
-            <div className="text-[var(--accent)]">{card.icon}</div>
-            <h3 className="text-xl font-bold text-[var(--foreground)]">{card.title}</h3>
-            <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">{card.text}</p>
+            <div className="text-[#B4B7AC]">{card.icon}</div>
+            <h3 className="text-xl font-bold text-slate-900">{card.title}</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">{card.text}</p>
           </motion.div>
         ))}
       </div>

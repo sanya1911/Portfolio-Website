@@ -40,7 +40,7 @@ export default function Projects() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)] mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-[#B4B7AC] mb-3"
       >
         Things I&apos;ve built
       </motion.p>
@@ -48,7 +48,7 @@ export default function Projects() {
         initial={{ opacity: 0, y: 14 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.45, delay: 0.05 }}
-        className="text-3xl font-extrabold text-[var(--foreground)] mb-10"
+        className="text-3xl font-extrabold text-slate-900 mb-10"
       >
         Projects
       </motion.h2>
@@ -64,10 +64,10 @@ export default function Projects() {
             className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 flex flex-col gap-4 cursor-default"
           >
             <div className="text-3xl">{project.emoji}</div>
-            <h3 className="text-xl font-bold text-[var(--foreground)] leading-tight">
+            <h3 className="text-xl font-bold text-slate-900 leading-tight">
               {project.title}
             </h3>
-            <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed flex-1">
+            <p className="text-slate-600 text-sm leading-relaxed flex-1">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-1.5">

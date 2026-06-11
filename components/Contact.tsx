@@ -37,7 +37,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)] mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-[#B4B7AC] mb-3"
       >
         Say hello
       </motion.p>
@@ -45,7 +45,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 14 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.45, delay: 0.05 }}
-        className="text-3xl font-extrabold text-[var(--foreground)] mb-10"
+        className="text-3xl font-extrabold text-slate-900 mb-10"
       >
         Contact
       </motion.h2>
@@ -59,8 +59,8 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left: Form */}
           <div className="p-8 sm:p-10 space-y-5">
-            <h3 className="text-2xl font-bold text-[var(--foreground)]">Let&apos;s connect.</h3>
-            <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
+            <h3 className="text-2xl font-bold text-slate-900">Let&apos;s connect.</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
               I enjoy connecting with people who are passionate about technology, innovation, and
               problem-solving. If you want to know more about me or my work, or if you would just
               like to say hello, send me a message. I&apos;d love to hear from you.
@@ -85,7 +85,7 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} noValidate className="space-y-4">
                 <div>
-                  <label htmlFor="contact-email" className="block text-xs font-semibold text-[var(--accent)] mb-1.5 uppercase tracking-wider">
+                  <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-600 mb-1.5 uppercase tracking-wider">
                     Email
                   </label>
                   <input
@@ -102,7 +102,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="contact-message" className="block text-xs font-semibold text-[var(--accent)] mb-1.5 uppercase tracking-wider">
+                  <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-600 mb-1.5 uppercase tracking-wider">
                     Message
                   </label>
                   <textarea
@@ -120,7 +120,7 @@ export default function Contact() {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-7 py-3 text-white text-sm font-bold rounded-xl transition-opacity hover:opacity-90"
+                  className="px-7 py-3 text-slate-900 text-sm font-bold rounded-xl transition-opacity hover:opacity-90"
                   style={{ backgroundColor: "var(--accent)" }}
                 >
                   Send &gt;
@@ -166,7 +166,7 @@ export default function Contact() {
         </div>
 
         {/* Footer strip */}
-        <div className="border-t border-[var(--border)] px-8 sm:px-10 py-4 flex flex-wrap items-center gap-4 text-xs text-zinc-400 dark:text-zinc-500">
+        <div className="border-t border-[var(--border)] px-8 sm:px-10 py-4 flex flex-wrap items-center gap-4 text-xs text-slate-500">
           <span>© 2025 Sanya Sachdeva</span>
           <span className="hidden sm:inline">·</span>
           <a href="mailto:sanyasachdeva223@gmail.com" className="hover:text-[var(--accent)] transition-colors">

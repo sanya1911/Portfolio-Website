@@ -29,7 +29,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B4B7AC] opacity-60" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#B4B7AC] pulse-dot" />
               </span>
-              <span className="text-xs font-semibold text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/40 rounded-full px-3 py-0.5 tracking-wide">
+              <span className="text-xs font-semibold text-slate-700 bg-[#B4B7AC]/15 border border-[#B4B7AC]/40 rounded-full px-3 py-0.5 tracking-wide">
                 Open to Work
               </span>
             </motion.div>
@@ -44,12 +44,12 @@ export default function Hero() {
             </motion.h1>
 
             {/* Role */}
-            <motion.p custom={2} variants={fadeUp} className="text-[var(--accent)] text-lg font-semibold tracking-wide">
+            <motion.p custom={2} variants={fadeUp} className="text-slate-700 text-lg font-semibold tracking-wide">
               Computer Science Student &nbsp;|&nbsp; Software &amp; AI Developer
             </motion.p>
 
             {/* Bio */}
-            <motion.p custom={3} variants={fadeUp} className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed max-w-lg">
+            <motion.p custom={3} variants={fadeUp} className="text-slate-600 text-base leading-relaxed max-w-lg">
               Building tech that makes sense. I&apos;m a computer science student based in New Delhi,
               passionate about blending clean web development with machine learning. Graduating in 2026.
             </motion.p>
@@ -60,7 +60,7 @@ export default function Hero() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent)] hover:opacity-90 text-white text-sm font-semibold rounded-xl transition-opacity shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#B4B7AC] hover:opacity-90 text-slate-900 text-sm font-semibold rounded-xl transition-opacity shadow-sm"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

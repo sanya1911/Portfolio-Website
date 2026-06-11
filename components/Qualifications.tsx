@@ -52,7 +52,7 @@ export default function Qualifications() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)] mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-[#B4B7AC] mb-3"
       >
         My Personal Journey
       </motion.p>
@@ -60,7 +60,7 @@ export default function Qualifications() {
         initial={{ opacity: 0, y: 14 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.45, delay: 0.05 }}
-        className="text-3xl font-extrabold text-[var(--foreground)] mb-10"
+        className="text-3xl font-extrabold text-slate-900 mb-10"
       >
         Qualifications
       </motion.h2>
@@ -130,9 +130,9 @@ export default function Qualifications() {
                         transition={{ duration: 0.5, delay: i * 0.15 }}
                         className={`bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 ${item.side === "right" ? "sm:text-right" : "sm:text-left"}`}
                       >
-                        <p className="text-xs font-semibold text-[var(--accent)] mb-1">{item.period}</p>
-                        <h4 className="font-bold text-[var(--foreground)] text-base leading-snug">{item.degree}</h4>
-                        <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">{item.institution}</p>
+                        <p className="text-xs font-semibold text-[#B4B7AC] mb-1">{item.period}</p>
+                        <h4 className="font-bold text-slate-900 text-base leading-snug">{item.degree}</h4>
+                        <p className="text-slate-500 text-sm mt-1">{item.institution}</p>
                       </motion.div>
                     </div>
                     {/* Center dot */}
@@ -173,7 +173,7 @@ export default function Qualifications() {
                     <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
                   </svg>
                 </div>
-                <h3 className="font-bold text-[var(--foreground)] text-sm leading-snug">{cert.title}</h3>
+                <h3 className="font-bold text-slate-900 text-sm leading-snug">{cert.title}</h3>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
@@ -186,7 +186,7 @@ export default function Qualifications() {
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </motion.button>
-                <p className="text-zinc-500 dark:text-zinc-400 text-xs leading-relaxed">{cert.description}</p>
+                <p className="text-slate-500 text-xs leading-relaxed">{cert.description}</p>
               </motion.div>
             ))}
           </motion.div>

@@ -71,7 +71,7 @@ export default function Hero() {
                 Resume
               </a>
               <a
-                href="https://github.com/sanya19111"
+                href="https://github.com/sanya1911"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] text-sm font-semibold rounded-xl hover:border-[var(--accent)] transition-colors"

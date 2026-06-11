@@ -10,7 +10,7 @@ const projects = [
       "Developed a full-stack responsive hotel booking application using React and MERN stack. Designed an admin dashboard with real-time analytics for inventory management, order processing, and user authentication.",
     tags: ["React", "Node.js", "Express.js", "MongoDB", "MERN"],
     emoji: "🏨",
-    github: "https://github.com/sanya19111",
+    github: "https://github.com/sanya1911",
   },
   {
     title: "SyAI — Simple Yet Another AI",
@@ -18,7 +18,7 @@ const projects = [
       "Collaborated in a team to develop an AI-powered notes and productivity application. Authored a research paper based on the application's design, development, and implementation. Led the AI and Python development, implementing features such as AI-generated quizzes, content generation, and realistic image generation from text prompts.",
     tags: ["Python", "AI", "Machine Learning"],
     emoji: "🤖",
-    github: "https://github.com/sanya19111",
+    github: "https://github.com/sanya1911",
   },
   {
     title: "FitFreaks",
@@ -26,7 +26,7 @@ const projects = [
       "Developed a responsive and visually engaging front-end for a gym website using HTML, CSS, JavaScript. Emphasized user experience with smooth navigation, mobile-friendly design, and consistent branding. Applied modern UI/UX principles using tools like Tailwind CSS for styling.",
     tags: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
     emoji: "💪",
-    github: "https://github.com/sanya19111",
+    github: "https://github.com/sanya1911",
   },
 ];
 

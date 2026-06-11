@@ -36,7 +36,7 @@ export default function Certifications() {
         initial={{ opacity: 0, y: 12 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4"
+        className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4"
       >
         Certifications
       </motion.h2>
@@ -51,13 +51,13 @@ export default function Certifications() {
             className="bg-white border border-zinc-200 rounded-2xl p-5 flex flex-col gap-3"
           >
             {/* Icon */}
-            <div className="w-9 h-9 rounded-xl bg-sage-100 border border-sage-200 flex items-center justify-center shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center shrink-0">
               <svg
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#4a7c59"
+                stroke="#c2693a"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"

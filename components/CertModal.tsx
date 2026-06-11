@@ -58,12 +58,12 @@ export default function CertModal({ open, onClose, imageSrc, title }: CertModalP
             exit={{ opacity: 0, scale: 0.95, y: 12 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden flex flex-col"
+            className="relative bg-[var(--card)] rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden flex flex-col"
             style={{ maxHeight: "90vh" }}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-zinc-100 shrink-0">
-              <h3 className="text-sm font-semibold text-zinc-800 truncate pr-4">{title}</h3>
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-[var(--border)] shrink-0">
+              <h3 className="text-sm font-semibold text-[var(--foreground)] truncate pr-4">{title}</h3>
               <button
                 onClick={onClose}
                 aria-label="Close certificate modal"
@@ -108,12 +108,12 @@ export default function CertModal({ open, onClose, imageSrc, title }: CertModalP
 
             {/* Footer with download link for PDF */}
             {isPdf(imageSrc) && (
-              <div className="px-5 py-3 border-t border-zinc-100 shrink-0">
+              <div className="px-5 py-3 border-t border-[var(--border)] shrink-0">
                 <a
                   href={imageSrc}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-accent font-medium hover:underline underline-offset-2"
+                  className="text-xs text-sage-500 font-medium hover:underline underline-offset-2"
                 >
                   Open PDF in new tab ↗
                 </a>

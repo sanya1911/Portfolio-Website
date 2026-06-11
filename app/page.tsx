@@ -1,35 +1,42 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Qualifications from "@/components/Qualifications";
 import Projects from "@/components/Projects";
-import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import LeftSidebar from "@/components/LeftSidebar";
 import RightSidebar from "@/components/RightSidebar";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-[var(--background)] text-[var(--foreground)] min-h-screen">
       <Nav />
       <LeftSidebar />
       <RightSidebar />
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-16">
-        <section id="hero">
-          <Hero />
-        </section>
-        <section id="about">
+
+      {/* Hero is full-bleed, no container */}
+      <section id="home" className="scroll-mt-20">
+        <Hero />
+      </section>
+
+      <main className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-24 space-y-24">
+        <section id="about" className="scroll-mt-24">
           <About />
         </section>
-        <section id="projects">
+        <section id="skills" className="scroll-mt-24">
+          <Skills />
+        </section>
+        <section id="qualifications" className="scroll-mt-24">
+          <Qualifications />
+        </section>
+        <section id="projects" className="scroll-mt-24">
           <Projects />
         </section>
-        <section id="certifications">
-          <Certifications />
-        </section>
-        <section id="contact">
+        <section id="contact" className="scroll-mt-24">
           <Contact />
         </section>
       </main>
-    </>
+    </div>
   );
 }

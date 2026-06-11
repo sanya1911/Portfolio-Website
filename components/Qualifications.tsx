@@ -52,7 +52,7 @@ export default function Qualifications() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-sage-500 dark:text-sage-400 mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)] mb-3"
       >
         My Personal Journey
       </motion.p>
@@ -60,7 +60,7 @@ export default function Qualifications() {
         initial={{ opacity: 0, y: 14 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.45, delay: 0.05 }}
-        className="text-3xl font-extrabold text-slate-900 dark:text-white mb-10"
+        className="text-3xl font-extrabold text-[var(--foreground)] mb-10"
       >
         Qualifications
       </motion.h2>
@@ -78,9 +78,14 @@ export default function Qualifications() {
             onClick={() => setActiveTab(tab)}
             className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold border transition-all ${
               activeTab === tab
-                ? "bg-sage-500 text-white border-sage-500 shadow-sm"
-                : "bg-[var(--card)] text-zinc-500 dark:text-zinc-400 border-[var(--border)] hover:border-sage-400"
+                ? "text-white shadow-sm"
+                : "bg-[var(--card)] text-zinc-500 dark:text-zinc-400 hover:border-[var(--accent)]"
             }`}
+            style={
+              activeTab === tab
+                ? { backgroundColor: "var(--accent)", borderColor: "var(--accent)" }
+                : { borderColor: "var(--border)" }
+            }
           >
             {tab === "education" ? (
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -108,15 +113,16 @@ export default function Qualifications() {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.35 }}
           >
-            {/* Timeline */}
             <div className="relative max-w-3xl mx-auto">
               {/* Center line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-[var(--border)] -translate-x-1/2 hidden sm:block" aria-hidden="true" />
-
+              <div
+                className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden sm:block"
+                style={{ backgroundColor: "var(--border)" }}
+                aria-hidden="true"
+              />
               <div className="space-y-10">
                 {educationItems.map((item, i) => (
                   <div key={i} className={`sm:flex ${item.side === "right" ? "sm:flex-row" : "sm:flex-row-reverse"} items-center gap-0`}>
-                    {/* Card */}
                     <div className={`flex-1 ${item.side === "right" ? "sm:pr-12" : "sm:pl-12"}`}>
                       <motion.div
                         initial={{ opacity: 0, x: item.side === "right" ? -20 : 20 }}
@@ -124,16 +130,17 @@ export default function Qualifications() {
                         transition={{ duration: 0.5, delay: i * 0.15 }}
                         className={`bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 ${item.side === "right" ? "sm:text-right" : "sm:text-left"}`}
                       >
-                        <p className="text-xs font-semibold text-sage-500 dark:text-sage-400 mb-1">{item.period}</p>
-                        <h4 className="font-bold text-slate-900 dark:text-white text-base leading-snug">{item.degree}</h4>
+                        <p className="text-xs font-semibold text-[var(--accent)] mb-1">{item.period}</p>
+                        <h4 className="font-bold text-[var(--foreground)] text-base leading-snug">{item.degree}</h4>
                         <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1">{item.institution}</p>
                       </motion.div>
                     </div>
-
                     {/* Center dot */}
-                    <div className="hidden sm:flex w-5 h-5 rounded-full bg-sage-500 border-4 border-[var(--background)] z-10 shrink-0" aria-hidden="true" />
-
-                    {/* Empty side */}
+                    <div
+                      className="hidden sm:flex w-5 h-5 rounded-full z-10 shrink-0 border-4 border-[var(--background)]"
+                      style={{ backgroundColor: "var(--accent)" }}
+                      aria-hidden="true"
+                    />
                     <div className="flex-1" />
                   </div>
                 ))}
@@ -157,18 +164,22 @@ export default function Qualifications() {
                 transition={{ duration: 0.45, delay: i * 0.1 }}
                 className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 flex flex-col gap-3"
               >
-                <div className="w-9 h-9 rounded-xl bg-sage-300/30 dark:bg-sage-700/20 border border-sage-300 dark:border-sage-700 flex items-center justify-center shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7E9475" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ backgroundColor: "rgba(180,183,172,0.15)", border: "1px solid var(--accent)" }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4B7AC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <circle cx="12" cy="8" r="6" />
                     <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
                   </svg>
                 </div>
-                <h3 className="font-bold text-slate-900 dark:text-white text-sm leading-snug">{cert.title}</h3>
+                <h3 className="font-bold text-[var(--foreground)] text-sm leading-snug">{cert.title}</h3>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setActiveCert(cert)}
-                  className="self-start inline-flex items-center gap-1.5 px-4 py-1.5 bg-sage-500 hover:bg-sage-600 text-white text-xs font-semibold rounded-lg transition-colors"
+                  className="self-start inline-flex items-center gap-1.5 px-4 py-1.5 text-white text-xs font-semibold rounded-lg transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "var(--accent)" }}
                 >
                   Click Here
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">

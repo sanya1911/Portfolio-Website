@@ -10,19 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: {
-          50: "#F7F5F0",
-          100: "#EDE9E0",
-          200: "#DDD8CC",
-        },
-        sage: {
-          300: "#C5CFC0",
-          400: "#A3B19B",
-          500: "#7E9475",
-          600: "#5E7557",
-          700: "#445540",
-        },
-        accent: "#7E9475",
+        // Exact brand hex codes
+        cream: "#e8e3d9",
+        sage:  "#B4B7AC",
+        // Alias for convenience
+        accent: "#B4B7AC",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"],

@@ -13,7 +13,7 @@ export default function About() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-sage-500 dark:text-sage-400 mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-[var(--accent)] mb-3"
       >
         Get to know me
       </motion.p>
@@ -41,20 +41,20 @@ export default function About() {
         </p>
         <div className="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
           <div className="space-y-1">
-            <p className="font-semibold text-sage-600 dark:text-sage-400 text-xs uppercase tracking-wider">Education</p>
+            <p className="font-semibold text-[var(--accent)] text-xs uppercase tracking-wider">Education</p>
             <p className="text-[var(--foreground)]">B.Tech Computer Science</p>
             <p className="text-zinc-500 dark:text-zinc-400 text-xs">SRM University Delhi-NCR · 2022 – 2026</p>
           </div>
           <div className="space-y-1">
-            <p className="font-semibold text-sage-600 dark:text-sage-400 text-xs uppercase tracking-wider">Location</p>
+            <p className="font-semibold text-[var(--accent)] text-xs uppercase tracking-wider">Location</p>
             <p className="text-[var(--foreground)]">New Delhi, India</p>
             <p className="text-zinc-500 dark:text-zinc-400 text-xs">110019</p>
           </div>
           <div className="space-y-1">
-            <p className="font-semibold text-sage-600 dark:text-sage-400 text-xs uppercase tracking-wider">Contact</p>
+            <p className="font-semibold text-[var(--accent)] text-xs uppercase tracking-wider">Contact</p>
             <a
               href="mailto:sanyasachdeva223@gmail.com"
-              className="text-sage-600 dark:text-sage-400 hover:underline underline-offset-2 transition-colors block truncate"
+              className="text-[var(--accent)] hover:underline underline-offset-2 transition-colors block truncate"
             >
               sanyasachdeva223@gmail.com
             </a>

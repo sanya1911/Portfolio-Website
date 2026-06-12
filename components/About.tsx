@@ -13,7 +13,7 @@ export default function About() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-[#B4B7AC] mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-slate-700 mb-3"
       >
         Get to know me
       </motion.p>
@@ -30,7 +30,7 @@ export default function About() {
         initial={{ opacity: 0, y: 24 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
-        className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-8 sm:p-10 space-y-5 max-w-4xl"
+        className="bg-white shadow-md rounded-2xl p-8 sm:p-10 space-y-5 max-w-4xl"
       >
         <p className="text-slate-800 text-base leading-relaxed">
           Computer Science student with strong programming skills in Python and Java, along with
@@ -41,24 +41,24 @@ export default function About() {
         </p>
         <div className="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
           <div className="space-y-1">
-            <p className="font-semibold text-[#B4B7AC] text-xs uppercase tracking-wider">Education</p>
+            <p className="font-semibold text-slate-700 text-xs uppercase tracking-wider">Education</p>
             <p className="text-slate-900">B.Tech Computer Science</p>
-            <p className="text-slate-500 text-xs">SRM University Delhi-NCR · 2022 – 2026</p>
+            <p className="text-slate-700 text-xs">SRM University Delhi-NCR · 2022 – 2026</p>
           </div>
           <div className="space-y-1">
-            <p className="font-semibold text-[#B4B7AC] text-xs uppercase tracking-wider">Location</p>
+            <p className="font-semibold text-slate-700 text-xs uppercase tracking-wider">Location</p>
             <p className="text-slate-900">New Delhi, India</p>
-            <p className="text-slate-500 text-xs">110019</p>
+            <p className="text-slate-700 text-xs">110019</p>
           </div>
           <div className="space-y-1">
-            <p className="font-semibold text-[#B4B7AC] text-xs uppercase tracking-wider">Contact</p>
+            <p className="font-semibold text-slate-700 text-xs uppercase tracking-wider">Contact</p>
             <a
               href="mailto:sanyasachdeva223@gmail.com"
               className="text-slate-800 hover:text-[#B4B7AC] underline underline-offset-2 transition-colors block truncate"
             >
               sanyasachdeva223@gmail.com
             </a>
-            <p className="text-slate-500 text-xs">9599099839</p>
+            <p className="text-slate-700 text-xs">9599099839</p>
           </div>
         </div>
       </motion.div>

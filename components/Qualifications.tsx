@@ -48,11 +48,12 @@ export default function Qualifications() {
 
   return (
     <div ref={ref}>
+      {/* Eyebrow — dark */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-[#B4B7AC] mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-slate-700 mb-3"
       >
         My Personal Journey
       </motion.p>
@@ -78,13 +79,13 @@ export default function Qualifications() {
             onClick={() => setActiveTab(tab)}
             className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold border transition-all ${
               activeTab === tab
-                ? "text-white shadow-sm"
-                : "bg-[var(--card)] text-zinc-500 dark:text-zinc-400 hover:border-[var(--accent)]"
+                ? "text-slate-900 shadow-sm"          /* active: dark text on sage bg */
+                : "bg-white text-slate-800 border-[var(--border)] hover:border-[#B4B7AC]"
             }`}
             style={
               activeTab === tab
-                ? { backgroundColor: "var(--accent)", borderColor: "var(--accent)" }
-                : { borderColor: "var(--border)" }
+                ? { backgroundColor: "#B4B7AC", borderColor: "#B4B7AC" }
+                : {}
             }
           >
             {tab === "education" ? (
@@ -116,8 +117,7 @@ export default function Qualifications() {
             <div className="relative max-w-3xl mx-auto">
               {/* Center line */}
               <div
-                className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden sm:block"
-                style={{ backgroundColor: "var(--border)" }}
+                className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden sm:block bg-[var(--border)]"
                 aria-hidden="true"
               />
               <div className="space-y-10">
@@ -128,17 +128,17 @@ export default function Qualifications() {
                         initial={{ opacity: 0, x: item.side === "right" ? -20 : 20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.5, delay: i * 0.15 }}
-                        className={`bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 ${item.side === "right" ? "sm:text-right" : "sm:text-left"}`}
+                        className={`bg-white shadow-sm border border-[var(--border)] rounded-xl p-5 ${item.side === "right" ? "sm:text-right" : "sm:text-left"}`}
                       >
-                        <p className="text-xs font-semibold text-[#B4B7AC] mb-1">{item.period}</p>
+                        {/* Period — dark */}
+                        <p className="text-xs font-semibold text-slate-700 mb-1">{item.period}</p>
                         <h4 className="font-bold text-slate-900 text-base leading-snug">{item.degree}</h4>
-                        <p className="text-slate-500 text-sm mt-1">{item.institution}</p>
+                        <p className="text-slate-700 text-sm mt-1">{item.institution}</p>
                       </motion.div>
                     </div>
                     {/* Center dot */}
                     <div
-                      className="hidden sm:flex w-5 h-5 rounded-full z-10 shrink-0 border-4 border-[var(--background)]"
-                      style={{ backgroundColor: "var(--accent)" }}
+                      className="hidden sm:flex w-5 h-5 rounded-full z-10 shrink-0 border-4 border-[#e8e3d9] bg-[#B4B7AC]"
                       aria-hidden="true"
                     />
                     <div className="flex-1" />
@@ -162,11 +162,11 @@ export default function Qualifications() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: i * 0.1 }}
-                className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 flex flex-col gap-3"
+                className="bg-white shadow-sm border border-[var(--border)] rounded-2xl p-6 flex flex-col gap-3"
               >
                 <div
                   className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: "rgba(180,183,172,0.15)", border: "1px solid var(--accent)" }}
+                  style={{ backgroundColor: "rgba(180,183,172,0.2)", border: "1px solid #B4B7AC" }}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4B7AC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <circle cx="12" cy="8" r="6" />
@@ -178,15 +178,15 @@ export default function Qualifications() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setActiveCert(cert)}
-                  className="self-start inline-flex items-center gap-1.5 px-4 py-1.5 text-white text-xs font-semibold rounded-lg transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "var(--accent)" }}
+                  className="self-start inline-flex items-center gap-1.5 px-4 py-1.5 text-slate-900 text-xs font-semibold rounded-lg transition-opacity hover:opacity-80"
+                  style={{ backgroundColor: "#B4B7AC" }}
                 >
                   Click Here
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </motion.button>
-                <p className="text-slate-500 text-xs leading-relaxed">{cert.description}</p>
+                <p className="text-slate-700 text-xs leading-relaxed">{cert.description}</p>
               </motion.div>
             ))}
           </motion.div>

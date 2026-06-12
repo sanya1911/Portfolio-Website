@@ -29,7 +29,7 @@ export default function Contact() {
   };
 
   const inputBase =
-    "w-full px-4 py-3 text-sm bg-[var(--background)] border rounded-xl outline-none transition-all placeholder:text-zinc-400 text-[var(--foreground)]";
+    "w-full px-4 py-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none transition-all placeholder:text-slate-400 text-slate-900";
 
   return (
     <div ref={ref}>
@@ -37,7 +37,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-[#B4B7AC] mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-slate-700 mb-3"
       >
         Say hello
       </motion.p>
@@ -54,7 +54,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 24 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
-        className="bg-[var(--card)] border border-[var(--border)] rounded-2xl overflow-hidden"
+        className="bg-white shadow-md rounded-2xl overflow-hidden"
       >
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left: Form */}

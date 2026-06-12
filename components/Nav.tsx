@@ -14,7 +14,6 @@ const links = [
 
 const SIDEBAR_STYLE: React.CSSProperties = {
   backgroundColor: "#e8e3d9",
-  // No border — seamless blend with main content
 };
 
 export default function Nav() {
@@ -27,17 +26,17 @@ export default function Nav() {
   };
 
   const NavLinks = () => (
-    <ul className="space-y-1">
+    <ul className="space-y-0.5">
       {links.map((link) => (
         <li key={link.href}>
           <a
             href={link.href}
             onClick={(e) => { e.preventDefault(); handleClick(link.href); }}
-            className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-sm font-medium text-slate-800 hover:text-[#B4B7AC] transition-colors"
+            className="group flex items-center gap-3 py-3 px-3 rounded-lg text-lg font-semibold text-slate-900 hover:text-[#B4B7AC] hover:translate-x-1 transition-all duration-200"
           >
             {/* Hover accent bar */}
             <span
-              className="block w-1 h-4 rounded-full bg-transparent group-hover:bg-[#B4B7AC] transition-colors shrink-0"
+              className="block w-1 h-5 rounded-full bg-transparent group-hover:bg-[#B4B7AC] transition-colors shrink-0"
               aria-hidden="true"
             />
             {link.label}
@@ -49,18 +48,18 @@ export default function Nav() {
 
   return (
     <>
-      {/* ── DESKTOP: fixed left vertical sidebar (no border) ── */}
+      {/* ── DESKTOP: fixed left vertical sidebar (no border, seamless) ── */}
       <aside
         className="hidden lg:flex fixed left-0 top-0 h-screen w-64 z-50 flex-col justify-between py-10 px-8"
         style={SIDEBAR_STYLE}
         aria-label="Main navigation"
       >
-        {/* Top: name */}
+        {/* Top: name + nav links */}
         <div>
           <a
             href="#home"
             onClick={(e) => { e.preventDefault(); handleClick("#home"); }}
-            className="block font-extrabold text-sm tracking-widest uppercase text-slate-900 hover:text-[#B4B7AC] transition-colors leading-tight mb-12"
+            className="block font-extrabold text-2xl tracking-wide uppercase text-slate-900 hover:text-[#B4B7AC] transition-colors leading-tight mb-12"
           >
             SANYA<br />SACHDEVA
           </a>
@@ -69,10 +68,8 @@ export default function Nav() {
           </nav>
         </div>
 
-        {/* Bottom: subtle branding line only */}
-        <p className="text-[10px] uppercase tracking-widest text-slate-400 font-medium">
-          Portfolio · 2025
-        </p>
+        {/* Bottom: completely empty — no text, no branding */}
+        <div />
       </aside>
 
       {/* ── MOBILE: slim top bar ── */}
@@ -83,7 +80,7 @@ export default function Nav() {
         <a
           href="#home"
           onClick={(e) => { e.preventDefault(); handleClick("#home"); }}
-          className="font-extrabold text-xs tracking-widest uppercase text-slate-900"
+          className="font-extrabold text-sm tracking-widest uppercase text-slate-900"
         >
           SANYA SACHDEVA
         </a>
@@ -124,14 +121,13 @@ export default function Nav() {
               aria-label="Mobile navigation"
             >
               <div>
-                <p className="font-extrabold text-sm tracking-widest uppercase text-slate-900 mb-10">
+                <p className="font-extrabold text-2xl tracking-wide uppercase text-slate-900 mb-10">
                   SANYA<br />SACHDEVA
                 </p>
                 <NavLinks />
               </div>
-              <p className="text-[10px] uppercase tracking-widest text-slate-400 font-medium">
-                Portfolio · 2025
-              </p>
+              {/* Bottom: empty */}
+              <div />
             </motion.nav>
           </>
         )}

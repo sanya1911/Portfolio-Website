@@ -57,11 +57,12 @@ export default function Skills() {
 
   return (
     <div ref={ref}>
+      {/* Section eyebrow — dark for legibility */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.4 }}
-        className="text-sm font-semibold uppercase tracking-widest text-[#B4B7AC] mb-3"
+        className="text-sm font-semibold uppercase tracking-widest text-slate-700 mb-3"
       >
         What I work with
       </motion.p>
@@ -82,11 +83,14 @@ export default function Skills() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
             whileHover={{ y: -3 }}
-            className="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-8 flex flex-col items-center text-center gap-4"
+            className="bg-white shadow-md rounded-2xl p-8 flex flex-col items-center text-center gap-4"
           >
+            {/* Icon in sage accent */}
             <div className="text-[#B4B7AC]">{card.icon}</div>
+            {/* Card title — dark */}
             <h3 className="text-xl font-bold text-slate-900">{card.title}</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">{card.text}</p>
+            {/* Card body — high contrast */}
+            <p className="text-slate-800 text-sm leading-relaxed">{card.text}</p>
           </motion.div>
         ))}
       </div>

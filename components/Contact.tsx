@@ -2,12 +2,16 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 export default function Contact() {
   const [email, setEmail]     = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors]   = useState<{ email?: string; message?: string }>({});
   const [sent, setSent]       = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const ref      = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -20,12 +24,37 @@ export default function Contact() {
     return e;
   };
 
-  const handleSubmit = (ev: React.FormEvent) => {
+  const handleSubmit = async (ev: React.FormEvent) => {
     ev.preventDefault();
+
+    // Client-side validation
     const errs = validate();
-    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      return;
+    }
+
     setErrors({});
-    setSent(true);
+    setSubmitError(null);
+    setSubmitting(true);
+
+    try {
+      await addDoc(collection(db, "messages"), {
+        email:     email.trim(),
+        message:   message.trim(),
+        createdAt: serverTimestamp(),
+      });
+
+      // Success — clear form and show confirmation
+      setEmail("");
+      setMessage("");
+      setSent(true);
+    } catch (err) {
+      console.error("Firestore submission error:", err);
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputBase =
@@ -80,7 +109,7 @@ export default function Contact() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                Message sent! I&apos;ll get back to you soon.
+                Message sent successfully!
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} noValidate className="space-y-4">
@@ -116,14 +145,20 @@ export default function Contact() {
                   {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
                 </div>
 
+                {/* Firestore submission error */}
+                {submitError && (
+                  <p className="text-xs text-red-500">{submitError}</p>
+                )}
+
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-7 py-3 text-slate-900 text-sm font-bold rounded-xl transition-opacity hover:opacity-90"
+                  disabled={submitting}
+                  whileHover={submitting ? {} : { scale: 1.02 }}
+                  whileTap={submitting ? {} : { scale: 0.98 }}
+                  className="px-7 py-3 text-slate-900 text-sm font-bold rounded-xl transition-opacity hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ backgroundColor: "var(--accent)" }}
                 >
-                  Send &gt;
+                  {submitting ? "Sending…" : "Send >"}
                 </motion.button>
               </form>
             )}

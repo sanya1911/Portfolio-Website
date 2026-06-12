@@ -183,3 +183,5 @@ vite.config.ts.timestamp-*
 
 
 .kiro/
+
+.env.local

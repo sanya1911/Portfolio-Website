@@ -60,7 +60,7 @@ export default function Contact() {
           {/* Left: Form */}
           <div className="p-8 sm:p-10 space-y-5">
             <h3 className="text-2xl font-bold text-slate-900">Let&apos;s connect.</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
+            <p className="text-slate-700 text-sm leading-relaxed">
               I enjoy connecting with people who are passionate about technology, innovation, and
               problem-solving. If you want to know more about me or my work, or if you would just
               like to say hello, send me a message. I&apos;d love to hear from you.
